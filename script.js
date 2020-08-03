@@ -4,6 +4,15 @@ const punchlineBtn = document.getElementById('punchlineBtn');
 const newJokeBtn = document.getElementById('newJokeBtn');
 let punchline;
 
+punchlineBtn.addEventListener('click', getPunchline);
+
+function getPunchline() {
+  punchlineDiv.innerHTML = punchline;
+  punchlineDiv.classList.add('bubble');
+  punchlineBtn.classList.toggle('hidden');
+  newJokeBtn.classList.toggle('hidden');
+}
+
 async function getJoke() {
   const jokePromise = await fetch(
     'https://official-joke-api.appspot.com/jokes/programming/random'

@@ -5,6 +5,7 @@ const newJokeBtn = document.getElementById('newJokeBtn');
 let punchline;
 
 punchlineBtn.addEventListener('click', getPunchline);
+newJokeBtn.addEventListener('click', getJoke);
 
 function getPunchline() {
   punchlineDiv.innerHTML = punchline;
@@ -21,6 +22,9 @@ async function getJoke() {
 
   setupDiv.innerHTML = joke[0].setup;
   punchline = joke[0].punchline;
+
+  punchlineDiv.innerHTML = '';
+  punchlineDiv.classList.remove('bubble');
 
   punchlineBtn.classList.toggle('hidden');
   newJokeBtn.classList.toggle('hidden');
